@@ -1,0 +1,37 @@
+plugins {
+	id 'java'
+	id 'application'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.apache.poi:poi:4.1.2'
+	implementation 'org.jfree:jfreechart:1.5.3'
+	implementation 'commons-dbcp:commons-dbcp:1.4'
+	implementation 'com.itextpdf:itext7-core:8.0.0'
+	implementation 'org.jfree:jfreechart:1.5.3'
+	implementation 'org.apache.commons:commons-dbcp2:2.9.0'
+	implementation 'org.apache.poi:poi:4.1.2'
+	implementation 'org.apache.poi:poi-ooxml:5.2.4'
+	implementation 'org.apache.logging.log4j:log4j-api:2.14.1'
+	implementation 'org.apache.logging.log4j:log4j-core:2.22.0'
+	implementation 'mysql:mysql-connector-java:8.0.23'
+	implementation 'ch.qos.logback:logback-classic:1.2.3'
+}
+
+application {
+	mainClassName = 'Main'
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.encoding = 'UTF-8'
+}
+
+tasks.withType(JavaExec).configureEach {
+	classpath = sourceSets.main.runtimeClasspath
+}
+
+
